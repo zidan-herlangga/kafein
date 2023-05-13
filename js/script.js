@@ -32,8 +32,8 @@ window.addEventListener("scroll", function () {
 });
 
 // Animasi typing repeat
-let typing = new Typed(".typed", {
-  strings: ["HackBymee."],
+let typing = new Typed("#typed", {
+  strings: ["Kafe In."],
   typeSpeed: 150,
   backSpeed: 90,
   loop: true,
