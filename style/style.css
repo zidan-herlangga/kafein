@@ -24,7 +24,7 @@ body {
 }
 
 /* Loading Screen start */
-#preloader {
+/* #preloader {
   display: flex;
   background: #000 url(../img/favicon/giphy.gif) no-repeat center;
   background-size: 15%;
@@ -33,7 +33,7 @@ body {
   position: fixed;
   z-index: 100;
   margin: 0 auto;
-}
+} */
 
 .test {
   display: none;
@@ -171,6 +171,23 @@ nav.sticky {
   box-shadow: rgba(1, 1, 3, 1) 3%;
 }
 
+/* Button Top Home */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
 /* About Section */
 .about,
 .menu,
@@ -305,6 +322,7 @@ nav.sticky {
   background-color: var(--bg);
   border: 1px solid #eee;
   padding-left: 2rem;
+  background: var(--bg);
 }
 
 .contact .row form .input-group input {
@@ -313,6 +331,18 @@ nav.sticky {
   font-size: 1.7rem;
   background: none;
   color: #fff;
+}
+
+.contact .row form textarea {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  color: #fff;
+  padding: 2rem;
+  width: 100%;
+  font-size: 1.7rem;
 }
 
 .contact .row form .btn {

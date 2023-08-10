@@ -13,7 +13,7 @@
       type="image/x-icon"
     />
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,7 @@
       rel="stylesheet"
     />
 
-    <!-- Animations -->
+    <!-- Animations AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Feather Icons -->
@@ -65,6 +65,10 @@
         <a href="beli/index.html" target="_blank" class="cta">Beli Sekarang</a>
       </main>
     </section>
+
+    <button onclick="topFunction()" id="myBtn" title="Go To Top">
+      <i data-feather="arrow-up"></i>
+    </button>
     <!-- Hero Section end -->
 
     <!-- About Section start -->
@@ -146,46 +150,44 @@
         >
 
         <!-- Cuma Test Loading Sreen start -->
-        <iframe
-          class="test"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/zkXp9x1U7xs"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          class="test"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/zkXp9x1U7xs"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          class="test"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/zkXp9x1U7xs"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          class="test"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/zkXp9x1U7xs"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <!-- <div class="test">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zkXp9x1U7xs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zkXp9x1U7xs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zkXp9x1U7xs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/zkXp9x1U7xs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div> -->
         <!-- Cuma Test Loading Screen end -->
       </div>
     </section>
@@ -213,20 +215,26 @@
           class="map"
         ></iframe>
 
-        <form action="">
+        <form>
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Nama" />
+            <input required type="text" id="name" placeholder="Nama" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="email" placeholder="Email" />
+            <input required type="email" id="email" placeholder="Email" />
           </div>
           <div class="input-group">
             <i data-feather="phone"></i>
-            <input type="tel" placeholder="No HP" />
+            <input required type="phone" id="phone" placeholder="No HP" />
           </div>
-          <button class="btn" type="submitm">Kirim pesan</button>
+          <textarea
+            name="Pesan"
+            id="message"
+            placeholder="Masukan Pesan"
+            rows="3"
+          ></textarea>
+          <button onclick="whatsappSend()" class="btn">Kirim Pesan WA</button>
         </form>
       </div>
     </section>
@@ -260,10 +268,35 @@
     </script>
 
     <!-- Loading Screen -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $(window).load(function () {
         $("#preloader").delay(2000).fadeOut("slow");
       });
+    </script> -->
+
+    <script>
+      function whatsappSend() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let message = document.getElementById("message").value;
+
+        let url =
+          "https://wa.me/6285157066514?text=" +
+          "Nama: " +
+          name +
+          "%0a" +
+          "Email: " +
+          email +
+          "%0a" +
+          "Phone: " +
+          phone +
+          "%0a" +
+          "Pesan: " +
+          message +
+          "%0a";
+        window.open(url, "_black").focus();
+      }
     </script>
 
     <!-- Animations -->
